@@ -1,0 +1,41 @@
+.shad{
+    box-shadow: 0 0 15px rgba(6, 13, 219, 0.7);
+
+}
+.brand{
+    height: 40px;
+    width: 40px;
+}
+.main1{
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    
+}
+.cont{
+    /* background-color: #f5f3e6; */
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif; /* Choose a clean, modern font */
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: #2c3e50; /* Set a custom color */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 0.1rem; /* Add space between letters */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.411); /* Add a subtle shadow */
+    display: inline-block;
+    padding: 0.5rem 1rem; /* Add some padding around the text */
+    background: linear-gradient(180deg, #5f92ff, #02ffdd); /* Gradient background */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text itself transparent */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    border-radius: 0.5rem; /* Optional: add rounded corners */
+}

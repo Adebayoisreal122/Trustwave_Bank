@@ -1,0 +1,32 @@
+.body{
+    background-color:#ffffff;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 5%;
+    height: 100vh;
+}
+
+mat-stepper{
+    
+    box-shadow: 0 0 30px rgba(4, 7, 94, 0.7);
+    width: 100%;
+}
+mat-step-header{
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid #000000;
+}
+mat-step-header:first-child{
+    border-top-left-radius: 10px;
+}
+mat-step-header:last-child{
+    border-top-right-radius: 10px;
+}
+mat-step-header:not(.mat-step-header-active):not(.mat-step-header-done) .mat-step-icon{
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}

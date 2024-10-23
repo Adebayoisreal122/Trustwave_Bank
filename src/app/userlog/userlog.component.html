@@ -1,0 +1,35 @@
+<div class="bod">
+  <div class="container-fluid p-5">
+    <div class="row"> <!-- Removed extra container and simplified row setup -->
+      <!-- Left Column (Sign In Form) -->
+      <div class="col-12 col-md-6 mt-5 p-3 mx-auto">
+        <div class="heading">Sign In</div>
+        <form (ngSubmit)="Submit(loginForm)" #loginForm="ngForm" class="form">
+          <div class="form-group">
+            <input required="" class="input" type="text" name="accountNumber" [(ngModel)]="accountNumber" placeholder="Account Number">
+          </div>
+          <div class="form-group">
+          <input required="" class="input" type="password" name="password" [(ngModel)]="password" placeholder="Password">
+          </div>
+          <span class="forgot-password"><a href="#">Forgot Password ?</a></span>
+          <button type="button" type="submit" class="login-button" >
+            Sign In
+          </button>
+          <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+            {{ errorMessage }}
+          </div>
+        </form>
+        <div class="social-account-container">
+          <span class="agreement"><small class="text-primary accoun">Don't have an account with us? </small>
+            <a href="/usersignup" class="fw-bolder text-warning">Create an account with us here</a>
+          </span>
+        </div>
+      </div> 
+
+      <!-- Right Column (Image) -->
+      <div class="col-12 col-md-6 p-3 mx-auto">
+        <img src="/images/main.svg" class="img-fluid" alt="login image"> <!-- Added Bootstrap class img-fluid for responsive images -->
+      </div>
+    </div>
+  </div>
+</div>

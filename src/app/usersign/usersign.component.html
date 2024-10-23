@@ -1,0 +1,105 @@
+
+<div class="body">
+
+  <mat-stepper #stepper>
+    <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your names and password</ng-template>
+        <div>
+        <mat-form-field>
+
+            <mat-label>First Name</mat-label>
+          <input matInput placeholder="Enter Your First name" type="text" formControlName="FirstName" required>
+        </mat-form-field>
+      </div>
+      <div>
+
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Enter Your Last name" type="text" formControlName="LastName" required>
+        </mat-form-field>
+      </div>
+<div>
+
+  <mat-form-field>
+    <mat-label> Username</mat-label>
+    <input matInput placeholder="Enter your Username" type="text" formControlName="Username" required>
+  </mat-form-field>
+</div>
+
+<div>
+  <mat-form-field>
+    <mat-label> Password</mat-label>
+    <input matInput placeholder="Enter your Password" type="text" formControlName="Password" required>
+  </mat-form-field>
+</div>
+
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup" errorMessage="contact is required.">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Fill out your contact</ng-template>
+          <div>
+            <mat-form-field>
+              <mat-label>E-mail Address</mat-label>
+              <input matInput placeholder="Enter your Email Address" type="email" formControlName="Email" required>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-label>Phone Number</mat-label>
+              <input matInput placeholder="Enter your Phone Number" type="text" formControlName="PhoneNumber" required>
+            </mat-form-field>
+          </div>
+          <div>
+          <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      
+    <mat-step [stepControl]="thirdFormGroup" errorMessage="Address is required.">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field>
+          <mat-label> Home Address</mat-label>
+          <input matInput placeholder="Enter Your Address" formControlName="Address"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="fourthFormGroup" errorMessage="Date is required.">
+      <form [formGroup]="fourthFormGroup">
+        <ng-template matStepLabel>Fill out your Date Of Birth</ng-template>
+        <mat-form-field>
+          <mat-label> Date Of Birth </mat-label>
+          <input matInput type="date" placeholder="Enter Your Date Of Birth" formControlName="DateOf"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button (click)="submit()">submit</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  
+
+</div>

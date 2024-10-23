@@ -1,0 +1,130 @@
+#wrapper {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  #sidebar-wrapper {
+    width: 250px;
+    position: fixed;
+    height: 100vh;
+    background-color: #f1f1f1;
+    padding-top: 20px;
+  }
+  
+  #page-content-wrapper {
+    margin-left: 250px;
+    width: 100%;
+  }
+  
+  .navbar {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container-fluid {
+    padding-top: 60px;
+  }
+  
+  .navbar .navbar-brand {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .navbar img {
+    border-radius: 50%;
+  }
+  
+
+
+
+/* Styling for menu items */
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px; /* Space between icon and text */
+  color: #000; /* Default text color */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Style for the SVG icon inside the button */
+.menu .icon {
+  transition: fill 0.3s ease-in-out; /* Smooth color transition */
+}
+
+/* Change color to blue on hover */
+.menu:hover,
+.menu:hover .icon {
+  color: blue; /* Text color on hover */
+  fill: blue;  /* Icon color on hover */
+}
+
+/* Change color to orange when active */
+.menu.active,
+.menu.active .icon {
+  color: orange; /* Text color on active */
+  fill: orange;  /* Icon color on active */
+}
+
+
+
+.no-border {
+  padding-top: 30px;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.no-border:focus,
+.no-border:hover {
+  box-shadow: none;
+  outline: none;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  #sidebar-wrapper {
+    width: 100%; /* Sidebar takes full width on small screens */
+    position: relative;
+    height: auto;
+  }
+
+  #page-content-wrapper {
+    margin-left: 0;
+  }
+
+  .navbar img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu {
+    justify-content: center; /* Center menu items */
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar-heading img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .navbar img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+
+
+.custom-column {
+  color: white;
+  background-color: #18095c; /* Grey background */
+  padding: 20px;
+  border-radius: 8px;
+}

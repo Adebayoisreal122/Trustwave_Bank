@@ -1,0 +1,191 @@
+<div class="d-flex flex-column flex-md-row" id="wrapper">
+  <!-- Sidebar -->
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading d-flex justify-content-center align-items-center py-2">
+      <img src="/images/logo12.png" alt="Logo" width="69px" height="69px">
+    </div>
+    <div class="list-group list-group-flush">
+      <!-- Home Button -->
+      <button class="list-group-item list-group-item-action bg-light menu no-border"
+              (click)="setView('home')" [class.active]="view === 'home'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="icon">
+          <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z" fill="currentColor"/>
+        </svg>
+        Home
+      </button>
+      
+      <!-- User Profile Button -->
+      <button class="list-group-item list-group-item-action bg-light menu no-border"
+              (click)="setView('profile')" [class.active]="view === 'profile'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="icon">
+          <path d="M12 2a5 5 0 110 10 5 5 0 010-10zM4 20c0-4 4-7 8-7s8 3 8 7H4z" fill="currentColor"/>
+        </svg>
+        User Profile
+      </button>
+
+      <!-- Transactions Button -->
+      <button class="list-group-item list-group-item-action bg-light menu no-border"
+              (click)="setView('transactions')" [class.active]="view === 'transactions'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="icon">
+          <path d="M12 4a2 2 0 100 4 2 2 0 000-4zM2 12h20v2H2v-2zm12 4a2 2 0 110 4 2 2 0 010-4z" fill="currentColor"/>
+        </svg>
+        Transactions
+      </button>
+
+      <!-- Beneficiaries Button -->
+      <button class="list-group-item list-group-item-action bg-light menu no-border"
+              (click)="setView('beneficiaries')" [class.active]="view === 'beneficiaries'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="icon">
+          <path d="M12 2a5 5 0 110 10 5 5 0 010-10zM4 20c0-4 4-7 8-7s8 3 8 7H4z" fill="currentColor"/>
+        </svg>
+        Beneficiaries
+      </button>
+
+      <!-- Settings Button -->
+      <button class="list-group-item list-group-item-action bg-light menu no-border"
+              (click)="setView('settings')" [class.active]="view === 'settings'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="icon">
+          <path d="M12 2l1.49 4.61L17 7l-3 2.4L15 14h-6l1.49-4.61L7 7l3.49-.39L12 2z" fill="currentColor"/>
+        </svg>
+        Settings
+      </button>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper" class="flex-grow-1">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-primary d-lg-none" id="menu-toggle">Toggle Menu</button>
+      <a class="navbar-brand ml-3" href="#">Welcome, {{ userName }}</a>
+      <p>This is your dashboard</p>
+      <div class="ml-auto d-flex gap-4 align-items-center">
+        <span class="mr-3">{{ userEmail }}</span>
+        <img [src]="userProfilePic" alt="Profile Picture" class="rounded-circle" width="40" height="40">
+        <button class="btn btn-outline-warning">Log Out</button>
+      </div>
+    </nav>
+
+    <!-- Dynamic Content -->
+    <div class="container-fluid mt-4">
+      <div *ngIf="view === 'home'">
+        <h2>Welcome to your dashboard.</h2>
+
+        <div class="container my-4">
+          <div class="row gy-4">
+            <!-- Column 1 -->
+            <div class="col-md-4 col-sm-6 col-12">
+              <div class="custom-column shadow text-center">
+                <h3>Financial Transactions</h3>
+
+                <p><i class="bi bi-piggy-bank-fill"></i> Deposit</p>
+                <p><i class="bi bi-arrow-up-circle-fill"></i> Withdrawal</p>
+                <p><i class="bi bi-arrow-up-right-circle"></i> Fund Transfer</p>
+
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-12 col-12">
+              <div class="custom-column shadow  text-center">
+                <h3>Loan Services</h3>
+
+                <p><i class="bi bi-building"></i> Apply for Loans</p>
+                <p><i class="bi bi-card-checklist"></i> Loan Repayment Schedule</p>
+                <p><i class="bi bi-file-earmark-check"></i> Pre-Approved Loans</p>
+                <p><i class="bi bi-currency-dollar"></i> Loan Payments</p>
+              </div>
+            </div>
+            <!-- Column 2 -->
+
+
+            <div class="col-md-4 col-sm-6 col-12">
+              <div class="custom-column shadow text-center">
+                <h3>Investment and Savings Services</h3>
+
+                <p><i class="bi bi-cash"></i> Open Investment Accounts</p>
+                <p><i class="bi bi-graph-up-arrow"></i> Track Investments</p>
+                <p><i class="bi bi-building-fill"></i> Retirement Accounts </p>
+
+              </div>
+            </div>
+
+
+
+            <div class="col-md-4 col-sm-6 col-12">
+              <div class="custom-column shadow text-center">
+                <h3>Bill payment</h3>
+
+                <p><i class="bi bi-receipt"></i> Bill Payments</p>
+                <p><i class="bi bi-phone-fill"></i> Airtime Purchase</p>
+                <p><i class="bi bi-wifi"></i> Data Purchase</p>
+
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-12">
+              <div class="custom-column shadow text-center">
+                <h3>Customer Support</h3>
+
+                <p><i class="bi bi-chat-left-dots-fill"></i> Live Chat/Support Requests</p>
+                <p><i class="bi bi-exclamation-triangle-fill"></i> Dispute Resolution</p>
+                <p><i class="bi bi-envelope-fill"></i> Feedback and Complaints</p>
+
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12">
+              <div class="custom-column shadow text-center">
+                <h3>Beneficiary Management</h3>
+  
+                <p><i class="bi bi-people-fill"></i> Add/Remove Beneficiaries</p>
+                <p><i class="bi bi-repeat"></i> Set Up Standing Instructions</p>
+
+              </div>
+            </div>
+            <!-- Column 3 -->
+           
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="view === 'profile'">
+
+        <h3>View and update your profile details here.</h3>
+
+        <div class="container">
+          <a href="">
+            <img [src]="userProfilePic" alt="Profile Picture" class="rounded-circle" width="300" height="300">
+          </a>
+        <!-- <h2>{{ user.name }}</h2>
+        <p>{{ user.email }}</p>
+        <p>{{ user.phone }}</p>
+        <p>{{ user.address }}</p>
+        <p>{{ user.city }}</p>
+        <p>{{ user.state }}</p>
+        <p>{{ user.zip }}</p>
+        <p>{{ user.country }}</p>
+        <p>{{ user.dob }}</p>
+        <p>{{ user.gender }}</p>
+        <p>{{ user.maritalStatus }}</p>
+        <p>{{ user.education }}</p>
+        <p>{{ user.occupation }}</p> -->
+        
+        </div>
+      </div>
+
+      <div *ngIf="view === 'transactions'">
+        <h2>Transactions</h2>
+        <p>View your transaction history here.</p>
+      </div>
+
+      <div *ngIf="view === 'beneficiaries'">
+        <h2>Beneficiaries</h2>
+        <p>Manage your beneficiaries here.</p>
+      </div>
+
+      <div *ngIf="view === 'settings'">
+        <h2>Settings</h2>
+        <p>Change your account settings here.</p>
+      </div>
+    </div>
+  </div>
+</div>
