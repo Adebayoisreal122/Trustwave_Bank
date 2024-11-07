@@ -24,15 +24,7 @@ export class UserdashComponent {
    userEmail: string = '';
    userProfilePic: string = '/images/peter.jpg'; // Replace with actual profile picture URL
  
-  //  ngOnInit() {
-  //   this.http.get('http://localhost/bank_app/customerinfo.php').subscribe((data: any) => {
-  //     console.log(data); 
-  //     this.details = data;
-  //     this.userName = data.userName;
-  //     this.userEmail = data.email;
-      
-  //   });
-  //  }
+
 
 
   ngOnInit() {
@@ -53,6 +45,8 @@ export class UserdashComponent {
     this.view = selectedView;
   }
 
+Logout(){
 
+}
   
 }

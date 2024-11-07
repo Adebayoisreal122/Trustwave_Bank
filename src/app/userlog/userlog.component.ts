@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./userlog.component.css']
 })
 export class UserlogComponent {
-  accountNumber = '';
+  AccountNumber = '';
   password = '';
   errorMessage = '';
 
@@ -28,7 +28,7 @@ export class UserlogComponent {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     const formData = {
-      AccountNumber: this.accountNumber,
+      AccountNumber: this.AccountNumber,
       password: this.password
     };
 
@@ -37,11 +37,9 @@ export class UserlogComponent {
       .subscribe(
         (response: any) => {
           if (response.status === 'success') {
-            // Navigate to the dashboard after successful login
             this.router.navigate(['/userdash']);
           } else {
-            // Display an error message
-            this.errorMessage = response.message; // Corrected to use response message
+            this.errorMessage = response.message;
           }
         },
         (error) => {

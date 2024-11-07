@@ -62,7 +62,7 @@
       <div class="ml-auto d-flex gap-4 align-items-center">
         <span class="mr-3">{{ userEmail }}</span>
         <img [src]="userProfilePic" alt="Profile Picture" class="rounded-circle" width="40" height="40">
-        <button class="btn btn-outline-warning">Log Out</button>
+        <button (click)="Logout()" class="btn btn-outline-warning">Log Out</button>
       </div>
     </nav>
 
@@ -70,6 +70,7 @@
     <div class="container-fluid mt-4">
       <div *ngIf="view === 'home'">
         <h2>Welcome to your dashboard.</h2>
+        
 
         <div class="container my-4">
           <div class="row gy-4">
